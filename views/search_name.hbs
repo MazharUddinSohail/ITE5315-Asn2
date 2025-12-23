@@ -1,0 +1,13 @@
+<h2>Search by Property Name</h2>
+
+{{#if error}}
+    <div style="color: red; background: #fee; padding: 10px; margin-bottom: 10px; border: 1px solid red;">
+        {{error}}
+    </div>
+{{/if}}
+
+<form action="/search/name/result" method="POST">
+    <label>Enter Partial Property Name:</label><br>
+    <input type="text" name="property_name" required>
+    <button type="submit">Search</button>
+</form>

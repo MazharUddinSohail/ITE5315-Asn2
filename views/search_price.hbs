@@ -1,0 +1,17 @@
+<h2>Search by Price Range</h2>
+
+{{#if error}}
+    <div style="color: red; padding: 10px; border: 1px solid red; margin-bottom: 10px;">
+        {{error}}
+    </div>
+{{/if}}
+
+<form action="/viewData/price" method="POST">
+    <label>Minimum Price ($):</label><br>
+    <input type="number" name="min_price" step="0.01" required><br><br>
+
+    <label>Maximum Price ($):</label><br>
+    <input type="number" name="max_price" step="0.01" required><br><br>
+
+    <button type="submit">Filter Results</button>
+</form>

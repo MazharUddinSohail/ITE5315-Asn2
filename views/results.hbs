@@ -1,0 +1,27 @@
+<h1>Search Results</h1>
+
+{{#if data}}
+    <p>Found {{data.length}} result(s).</p>
+    
+    <div class="results-container">
+        {{#each data}}
+            <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px; overflow: hidden; background: #f9f9f9;">
+                {{#if this.thumbnail}}
+                    <img src="{{this.thumbnail}}" alt="Property Image" style="float: right; width: 200px; border-radius: 5px;">
+                {{/if}}
+
+                <h3>{{this.NAME}}</h3>
+                <p><strong>ID:</strong> {{this.id}}</p>
+                <p><strong>Host Name:</strong> {{lookup this 'host name'}}</p>
+                <p><strong>Neighbourhood:</strong> {{this.neighbourhood}}</p>
+                <p><strong>Room Type:</strong> {{lookup this 'room type'}}</p>
+                <p><strong>Price:</strong> {{this.price}}</p>
+            </div>
+        {{/each}}
+    </div>
+    
+    <a href="/">Go Back Home</a>
+{{else}}
+    <h3>No data found.</h3>
+    <a href="/">Try Again</a>
+{{/if}}

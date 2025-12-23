@@ -1,0 +1,13 @@
+<h2>Search by Property ID</h2>
+
+{{#if error}}
+    <div style="color: red; background: #fee; padding: 10px; margin-bottom: 10px; border: 1px solid red;">
+        {{error}}
+    </div>
+{{/if}}
+
+<form action="/search/id/result" method="POST">
+    <label>Enter Property ID (Numeric only):</label><br>
+    <input type="text" name="property_id" required>
+    <button type="submit">Search</button>
+</form>
